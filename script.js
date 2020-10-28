@@ -1,30 +1,3 @@
-function cycleDemonstration() {
-    let count = +document.getElementById('id1').value;
-    for (let i = 1; i <= count; i++) {
-        console.log("Це демонстрація циклу №" + i);
-    }
-}
-
-function workWithObject() {
-    let form = {
-        firstName: document.getElementById('fName').value,
-        lastName: document.getElementById('lName').value,
-        age: document.getElementById('age').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value
-    };
-    let formReady = true;
-    for (let field in form) {
-        if (form[field] == "") {
-            alert('Поле ' + field + ' не заповнено');
-            formReady = false;
-        }
-    }
-    if (formReady) {
-        alert("Форма успішно відправлена!");
-    }
-}
-
 function exampleArray() {
     let phrases = [
         "Звучить непогано!",
@@ -34,4 +7,33 @@ function exampleArray() {
         "Ти не кіт, ти лонгет"
     ];
     alert(phrases[Math.floor(Math.random() * 5)]);
+};
+
+
+function cycleDemonstration() {
+    let count = +document.getElementById('id1').value;
+    for (let i = 1; i <= count; i++) {
+        console.log("Це демонстрація циклу №" + i);
+    }
+}
+
+let car = {
+    color: 'White',
+    maxSpeed: 220,
+    audio: {
+        brand: 'Sony',
+        type: 'mp4',
+        size: 'micro'
+    }
+}
+
+console.log(car.audio.brand);
+
+let car2 = {
+    manufacturer: 'Nissan',
+    model: 'Juke',
+    color: 'White'
+}
+for (let propName in car2) {
+    console.log(propName + '='+ car2[propName]);
 }
